@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "analise-letras-br"
+name = "src"
 version = "0.1.0"
 description = "Para analisar letras de artistas brasileiros e visualizá-las junto de seus álbuns de origem"
 authors = ["fiuzatayna <taynafiuza2@gmail.com>"]
