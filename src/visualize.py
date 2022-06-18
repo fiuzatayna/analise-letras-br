@@ -44,10 +44,16 @@ def cria_imagem_nuvem(letra, url_capa, stop):
 def cria_nuvem_capa(letra, url_capa, stop):
     
     letra = letra.lower()
-    capa = retrieve.baixa_capa(url_capa, 'temp')
-    capa = retrieve.aumenta_imagem(capa)
+    try:
+        capa = retrieve.baixa_capa(url_capa, 'temp')
+        capa = retrieve.aumenta_imagem(capa)
+        mask = np.array(Image.open(capa))
+    except:
+        capa = '../images/song.webp'
+        capa = retrieve.aumenta_imagem(capa)
+        mask = np.array(Image.open(capa))
     
-    mask = np.array(Image.open(capa))
+    
 
     wordcloud = WordCloud(stopwords=stop, 
                               background_color="white", 
